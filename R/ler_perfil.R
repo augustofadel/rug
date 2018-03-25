@@ -7,10 +7,11 @@ ler_perfil <- function(
 ) {
    id <-
       pasta %>%
+      toupper() %>%
       stringr::str_split('/') %>%
       '[['(1) %>%
       tail(1) %>%
-      stringr::str_replace('Perfil modificado', '') %>%
+      stringr::str_replace('PERFIL MODIFICADO', '') %>%
       stringr::str_trim('both')
    arquivos <- list.files(pasta)
    dat <- matrix(
